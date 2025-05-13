@@ -12,7 +12,7 @@ type Products = {
 };
 
 export default function ProductsPage(){
-    const [products, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<Products[]>([]);
     const router = useRouter();
     useEffect(()=>{
         const user = localStorage.getItem('user');
