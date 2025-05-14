@@ -22,7 +22,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gray-100">
+    <main className="p-8 max-w-4xl mx-auto bg-white rounded-xl shadow-md border border-gray-200">
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-4">Welcome to GymBeam</h1>
         <input
