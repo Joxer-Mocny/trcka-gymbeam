@@ -41,8 +41,8 @@ export default function ProductsPage(){
                         src={product.image}
                         alt={product.title}
                         className="h-40 w-full object-contain mb-4"/>
-                        <h2 className="text-lg font-semibold">{product.title}</h2>
-                        <p className='text-orange-500 font-bold'>${product.price}</p>
+                        <h2 className="text-lg font-semibold text-[#1a1a1a]">{product.title}</h2>
+                        <p className="text-[#f37021] font-bold">${product.price}</p>
                     </div>
                     ))}
             </div>

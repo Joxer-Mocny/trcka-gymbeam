@@ -22,15 +22,15 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="p-8 max-w-4xl mx-auto bg-white rounded-xl shadow-md border border-gray-200">
+    <main className="flex items-center justify-center min-h-screen bg-[#f5f5f5]">
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm">
-        <h1 className="text-2xl font-bold mb-4">Welcome to GymBeam</h1>
+        <h1 className="text-2xl font-bold mb-4 text-[#1a1a1a]">Welcome to GymBeam</h1>
         <input
           type="text"
           placeholder="Enter your name"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full p-2 border rounded mb-4"
+          className="w-full p-2 border rounded mb-4 text-[#1a1a1a]"
         />
         <button
           onClick={handleLogin}
