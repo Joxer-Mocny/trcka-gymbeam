@@ -1,32 +1,45 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Navbar(){
-    const router = useRouter();
-    const [user, setuser] = useState<string | null>(null);
+export default function Navbar() {
+  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+  const [user, setUser] = useState<string | null>(null);
 
-    useEffect(()=> {
-        const storedUser = localStorage.getItem('user');
-        setuser(storedUser);
-    }, []);
+useEffect(() => {
+  setIsClient(true);
+  const storedUser = localStorage.getItem('user');
+  setUser(storedUser);
 
-    const handleLogout = () => {
-        localStorage.removeItem('user');
-        router.push('/');
-    };
+  const handleStorageChange = () => {
+    const updatedUser = localStorage.getItem('user');
+    setUser(updatedUser);
+  };
 
-    if (!user) return null;
+  window.addEventListener('storage', handleStorageChange);
+  return () => window.removeEventListener('storage', handleStorageChange);
+}, []);
 
-    return (
-        <nav className="bg-orange-500 text-white px-6 py4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">GymBeam Shop</h1>    
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    router.push('/');
+    setUser(null); // okamžitá zmena
+  };
+
+  return (
+    <nav className="bg-[#f37021] text-white px-6 py-4 flex justify-between items-center">
+      <h1 className="text-xl font-bold">GymBeam Shop</h1>
+      {isClient && user && (
         <button
-            onClick={handleLogout}
-            className="bg-white text-orange-500 px-4 py-2 rounded hover:bg-gray-100 transition">
-                Logout
-            </button>
-        </nav>
-    );
+          onClick={handleLogout}
+          className="py-2 px-4 rounded font-medium border transition border-white text-black bg-white hover:bg-[#f37021] hover:text-white"
+        >
+          Logout
+        </button>
+      )}
+    </nav>
+  );
 }
