@@ -24,6 +24,20 @@ npm run dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
+📸 Screenshots
+Screenshots are located in the screenshots/ folder and include key moments of the application:
+
+Login screen
+
+Product listing
+
+Product detail
+
+Error state (e.g. invalid product ID)
+
+Mobile view
+
+Footer
 
 ## 🌐 Live Demo
 
