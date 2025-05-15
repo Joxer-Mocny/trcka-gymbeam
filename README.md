@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GymBeam Case Study – React Developer
 
-## Getting Started
+This is a simple e-commerce web application built as part of a case study for the React Developer position at GymBeam. The application allows customers to log in and browse products from the Fake Store API.
 
-First, run the development server:
+## 🔧 Technologies Used
+
+- [React](https://react.dev/) (via Next.js)
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- TypeScript
+
+## 🚀 Features
+
+- 🔐 **Login** screen using localStorage to simulate authentication
+- 🛍️ **Product listing** page (requires login)
+- 📦 **Product detail** page (protected)
+- 🔓 **Logout** button with state reset
+- ⚙️ Fully responsive layout (mobile & desktop)
+- 🎨 Styled in line with GymBeam branding (orange, black, white)
+- 📡 Data from [Fake Store API](https://fakestoreapi.com/)
+
+## ▶️ How to Run Locally
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/gymbeam-case-study.git
+cd gymbeam-case-study
+
+# 2. Install dependencies
+npm install
+
+# 3. Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📸 Screenshots (recommended)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> Please include screenshots of:
+> - Login screen (desktop & mobile)
+> - Product list view
+> - Product detail view
+> - Logged-out state
 
-## Learn More
+## 🧠 Notes on Implementation
 
-To learn more about Next.js, take a look at the following resources:
+- The app uses `localStorage` to simulate login/logout without backend
+- Routes `/products` and `/products/[id]` are protected and redirect if unauthenticated
+- Styling is fully handled via Tailwind utility classes
+- Button logic and appearance is shared between login and logout to ensure consistency
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Folder Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── page.tsx         # Login page
+│   ├── products/
+│   │   ├── page.tsx     # Product list
+│   │   └── [id]/page.tsx# Product detail
+│   └── layout.tsx       # Shared layout with Navbar
+├── components/
+│   └── Navbar.tsx       # Top navigation with logout
+└── styles/
+    └── globals.css
+```
 
-## Deploy on Vercel
+## 👨‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Filip Trcka  
+Contact: filiptrcka@gmail.com  
+Submission: GymBeam Case Study (May 2025)

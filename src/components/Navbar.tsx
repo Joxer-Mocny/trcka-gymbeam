@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Button from './Button';
 
 export default function Navbar() {
   const router = useRouter();
@@ -33,12 +34,9 @@ useEffect(() => {
     <nav className="bg-[#f37021] text-white px-6 py-4 flex justify-between items-center">
       <h1 className="text-xl font-bold">GymBeam Shop</h1>
       {isClient && user && (
-        <button
-          onClick={handleLogout}
-          className="py-2 px-4 rounded font-medium border transition border-white text-black bg-white hover:bg-[#f37021] hover:text-white"
-        >
-          Logout
-        </button>
+       <Button onClick={handleLogout}>
+        Logout
+      </Button>
       )}
     </nav>
   );

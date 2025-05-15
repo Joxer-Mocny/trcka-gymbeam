@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Button from '@/components/Button';
 
 
 export default function LoginPage() {
@@ -38,18 +39,9 @@ export default function LoginPage() {
     className="w-full p-2 border rounded mb-4 text-[#1a1a1a]"
   />
 
-<button
-  type="submit"
-  disabled={!username.trim()}
-  className={`w-full py-2 px-4 rounded font-medium border transition 
-    ${
-      !username.trim()
-        ? 'border-black text-black bg-white'
-        : 'bg-[#f37021] text-white border-[#f37021] hover:bg-orange-600'
-    }`}
->
+<Button type="submit" disabled={!username.trim()} >
   Login
-</button>
+</Button>
 </form>
       </div>
     </main>
