@@ -23,7 +23,7 @@ This is a simple e-commerce web application built as part of a case study for th
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/gymbeam-case-study.git
+git clone https://github.com/Joxer-Mocny/trcka-gymbeam
 cd gymbeam-case-study
 
 # 2. Install dependencies
