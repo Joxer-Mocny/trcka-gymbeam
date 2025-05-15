@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Product = {
   id: number;
@@ -17,16 +17,16 @@ export default function ProductsPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem("user");
     if (!user) {
-      router.push('/');
+      router.push("/");
     }
   }, [router]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch("https://fakestoreapi.com/products")
       .then((res) => {
-        if (!res.ok) throw new Error('Failed to load products');
+        if (!res.ok) throw new Error("Failed to load products");
         return res.json();
       })
       .then((data) => setProducts(data))
@@ -39,7 +39,7 @@ export default function ProductsPage() {
 
   return (
     <main className="p-8">
-      <h1 className="text-3xl font-bold mb-6 text-gray-600">Products</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-400">Products</h1>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <div
@@ -52,7 +52,9 @@ export default function ProductsPage() {
               alt={product.title}
               className="h-40 w-full object-contain mb-4"
             />
-            <h2 className="text-lg font-semibold text-[#1a1a1a]">{product.title}</h2>
+            <h2 className="text-lg font-semibold text-[#1a1a1a]">
+              {product.title}
+            </h2>
             <p className="text-[#f37021] font-bold">${product.price}</p>
           </div>
         ))}
