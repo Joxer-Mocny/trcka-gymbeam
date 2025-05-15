@@ -31,7 +31,7 @@ useEffect(() => {
   };
 
   return (
-    <nav className="bg-[#f37021] text-white px-6 py-4 flex justify-between items-center">
+    <nav className="bg-[#f37021] text-white px-6 py-4 flex justify-between items-center sticky top-0 z-50">
       <h1 className="text-xl font-bold">GymBeam Shop</h1>
       {isClient && user && (
        <Button onClick={handleLogout}>
