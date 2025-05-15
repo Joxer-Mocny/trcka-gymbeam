@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Button from '@/components/Button';
 
 type Product = {
   id: number;
@@ -16,21 +17,36 @@ export default function ProductsPage() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
+  // kontrola prihlasenia
   useEffect(() => {
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem('user');
     if (!user) {
-      router.push("/");
+      router.push('/');
     }
   }, [router]);
 
+  // načítanie produktov s error handlingom
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load products");
-        return res.json();
-      })
-      .then((data) => setProducts(data))
-      .catch((err) => setError(err.message));
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products');
+
+        if (!res.ok) {
+          throw new Error(`HTTP error: ${res.status}`);
+        }
+
+        const data = await res.json();
+        setProducts(data);
+      } catch (err) {
+        if (err instanceof SyntaxError) {
+          setError('Invalid JSON response from API.');
+        } else {
+          setError((err as Error).message);
+        }
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   if (error) {
