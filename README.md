@@ -9,16 +9,6 @@ This is a simple e-commerce web application built as part of a case study for th
 - [Tailwind CSS](https://tailwindcss.com/)
 - TypeScript
 
-## 🚀 Features
-
-- 🔐 **Login** screen using localStorage to simulate authentication
-- 🛍️ **Product listing** page (requires login)
-- 📦 **Product detail** page (protected)
-- 🔓 **Logout** button with state reset
-- ⚙️ Fully responsive layout (mobile & desktop)
-- 🎨 Styled in line with GymBeam branding (orange, black, white)
-- 📡 Data from [Fake Store API](https://fakestoreapi.com/)
-
 ## ▶️ How to Run Locally
 
 ```bash
@@ -35,20 +25,28 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📸 Screenshots (recommended)
+## 🌐 Live Demo
 
-> Please include screenshots of:
-> - Login screen (desktop & mobile)
-> - Product list view
-> - Product detail view
-> - Logged-out state
+You can view the live version here:  
+👉 [https://trcka-gymbeam.onrender.com](https://trcka-gymbeam.onrender.com)
+
+
+## 🚀 Features
+
+- 🔐 **Login** screen using localStorage to simulate authentication
+- 🛍️ **Product listing** page (requires login)
+- 📦 **Product detail** page (protected)
+- 🔓 **Logout** button with state reset
+- ⚙️ Fully responsive layout (mobile & desktop)
+- 🎨 Styled in line with GymBeam branding (orange, black, white)
+- 📡 Data from [Fake Store API](https://fakestoreapi.com/)
 
 ## 🧠 Notes on Implementation
 
+- Shared `Button` component is used for both login and logout buttons to ensure consistent style and behavior
 - The app uses `localStorage` to simulate login/logout without backend
 - Routes `/products` and `/products/[id]` are protected and redirect if unauthenticated
 - Styling is fully handled via Tailwind utility classes
-- Button logic and appearance is shared between login and logout to ensure consistency
 
 ## 📁 Folder Structure
 
@@ -68,6 +66,6 @@ src/
 
 ## 👨‍💻 Author
 
-Filip Trcka  
-Contact: filiptrcka@gmail.com  
+Filip Trčka  
+Contact: filiptrcka.dev@gmail.com  
 Submission: GymBeam Case Study (May 2025)

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Button from '@/components/Button';
 
 type Product = {
     id:number;
@@ -36,12 +37,11 @@ export default function ProductDetailPage() {
 
     return(
          <main className="p-8 max-w-3xl mx-auto bg-white rounded-xl shadow">
-      <button
+      <Button
         onClick={() => router.back()}
-        className="mb-4 text-orange-500 underline hover:text-orange-600"
       >
         ← Back to Products
-      </button>
+      </Button>
 
       <div className="flex flex-col md:flex-row gap-8">
         <img

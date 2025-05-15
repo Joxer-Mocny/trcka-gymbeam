@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer'; 
 
 export const metadata: Metadata = {
   title: 'GymBeam Case Study',
@@ -14,9 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#f5f5f5] min-h-screen">
+      <body className="min-h-screen bg-gray-100 text-black">
         <Navbar />
-        {children}
+        <main className="flex-grow">{children}</main>
+       <Footer />
       </body>
     </html>
   );
