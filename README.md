@@ -80,6 +80,6 @@ src/
 
 ## 👨‍💻 Author
 
-Filip Trčka  
-Contact: filiptrcka.dev@gmail.com  
+Filip Trcka  
+Contact: filiptrcka@gmail.com  
 Submission: GymBeam Case Study (May 2025)
